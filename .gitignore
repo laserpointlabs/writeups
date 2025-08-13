@@ -1,0 +1,24 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Node / tooling (if added later)
+node_modules/
+
+# Python virtual envs
+venv/
+.env/
+
+# Editors
+*.swp
+.idea/
+.vscode/
+
+# Build / export artifacts
+/dist/
+/build/
+/site/
+
+# Temporary
+*.tmp
+*.log
