@@ -33,13 +33,16 @@ This repo is intentionally open to: 1) share thinking early, 2) invite critique,
 Issues and PRs welcome (concept gaps, ontological consistency checks, terminology alignment, references). Please keep critiques constructive and reference sources where possible.
 
 ## Suggested Future Additions
-- LICENSE (MIT or CC-BY-SA depending on reuse intent)
 - Citation / DOI (e.g., via Zenodo) once initial baseline stabilizes
 - Formal OWL/RDF artifacts for ontology components
-- Change log tracking ontological version increments
+- Ontology change policy & semantic versioning guidance
 
 ## License
-No explicit license yet. Until one is added, treat content as All Rights Reserved; open a discussion if you need specific reuse rights. (Recommend adding MIT for prose + CC-BY 4.0 or CC-BY-SA 4.0 if broader remix desired.)
+Dual license approach:
+- Prose / ontology descriptions / white papers: Creative Commons Attribution 4.0 (CC BY 4.0)
+- Any source code (if/when added): MIT License
+
+See `LICENSE` file for full terms. Contributions are accepted under the same dual terms.
 
 ## Quick Start
 Browse directories; read `SE Ontology White Papers Series` in order for progressive depth. Use the Heilmeier Catechism to frame new concept documents before adding them.
