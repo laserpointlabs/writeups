@@ -138,16 +138,37 @@ It does *not* need raw confidential data to learn structure—just metadata abou
 ## 13. A 60-Second Demo (Imagined)
 1. Type: "Monitor folder X, summarize new CSVs daily, email top 5 anomalies."
 2. System proposes a workflow: watch folder → parse CSV → detect anomalies → format summary → send.
+```mermaid
+flowchart LR
+	subgraph Automated BPMN Model
+		direction LR
+		A[Monitor folder X] --> B[Parse new CSV files daily]
+		B --> C[Detect anomalies]
+		C --> D[Format summary]
+		D --> E[Email top 5 anomalies]
+	end
+```
 3. You click approve.
 4. Tomorrow it runs automatically; you see a green check.
 5. After a week it suggests: "Add a trend chart?"
+```mermaid
+flowchart LR
+	subgraph Automated Change
+		direction LR
+		A[Monitor folder X] --> B[Parse new CSV files daily]
+		B --> C[Detect anomalies]
+		C --> D[Format summary]
+		D --> E[Email top 5 anomalies]
+		E --> F[Trend Chart]
+	end
+```
 
 ## 14. Roles
 | Role | How They Benefit |
 |------|------------------|
 | Analyst | Automate recurring reporting |
 | Engineer | Rapidly prototype system flows |
-| Domain Expert | Encode tribal knowledge |
+| Domain Expert | **Encode tribal knowledge** |
 | Ops Lead | Audit what’s really happening |
 | Exec | See process transparency & improvement metrics |
 
@@ -158,7 +179,7 @@ It does *not* need raw confidential data to learn structure—just metadata abou
 - Building domain-specific "mini operating systems"
 
 ## 16. Limitations (Honest View)
-- Needs initial examples or descriptions—can’t read your mind
+- Needs initial examples or descriptions—can’t read your mind *(We create curated and approved 'a priori' knowledge to help here :))*
 - Complex judgement-heavy steps still need a human
 - Bad input descriptions = weak workflows
 - Visual sprawl if you never prune unused processes
@@ -190,5 +211,3 @@ Day 7: Prune or refine any noisy/unused workflows
 ## 20. Elevator Pitch (Use This)
 "KnowOS turns what you know into living, visual workflows that you can run, inspect, improve, and move anywhere. Describe it once; evolve it forever."
 
----
-Feel free to annotate this doc with real examples from your domain to make it stickier for your team.
