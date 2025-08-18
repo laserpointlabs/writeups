@@ -102,8 +102,9 @@ Here's what makes BPMN special:
 In ProcOS, literally everything is a process:
 
 ```mermaid
-graph TB
+graph LR
     subgraph "🖥️ Starting Up Your Computer"
+        direction LR
         A1([Power On]) --> A2[Check Hardware]
         A2 --> A3[Load Drivers]
         A3 --> A4[Start Services]
@@ -111,6 +112,7 @@ graph TB
     end
     
     subgraph "📁 Opening a File"
+        direction LR
         B1([User Clicks File]) --> B2[Check Permissions]
         B2 --> B3[Virus Scan]
         B3 --> B4[Load Content]
@@ -118,6 +120,7 @@ graph TB
     end
     
     subgraph "☕ Making Coffee (Future Feature!)"
+        direction LR
         C1([Start Coffee Process]) --> C2[Check Water]
         C2 --> C3[Heat Water]
         C3 --> C4[Grind Beans]
