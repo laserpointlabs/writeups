@@ -22,6 +22,97 @@
 
 The Decision Options Space (DOS) represents a revolutionary approach to decision-making through continuous field theory, moving beyond traditional discrete choice models. This analysis proposes enhancing DOS with Markov chain methodology and ensemble approaches to address key limitations:
 
+### Framework Architecture Overview
+
+```mermaid
+graph TB
+    subgraph "DOS-Markov-Ensemble-MADS Integrated Framework"
+        subgraph "Tier 1: Continuous Field Analysis (DOS)"
+            DOS_Field["Option Field Φ(x,t)"]
+            DOS_Gradient["Gradient ∇Φ"]
+            DOS_Hessian["Hessian ∇²Φ"]
+            DOS_Tensor["Trade-off Tensor T^{ijk}"]
+            
+            DOS_Field --> DOS_Gradient
+            DOS_Field --> DOS_Hessian
+            DOS_Field --> DOS_Tensor
+        end
+        
+        subgraph "Tier 2: Stochastic Transition Modeling (Markov)"
+            Markov_States["Discretized States S_i"]
+            Markov_Transitions["Transition Matrix P_{ij}"]
+            Markov_Analysis["Steady-State Analysis"]
+            
+            DOS_Field --> Markov_States
+            Markov_States --> Markov_Transitions
+            Markov_Transitions --> Markov_Analysis
+        end
+        
+        subgraph "Tier 3: Multi-Method Validation (Ensemble)"
+            Ensemble_Methods["Monte Carlo<br/>MCDA<br/>Bayesian<br/>Real Options"]
+            Cross_Validation["Cross-Validation"]
+            Uncertainty["Uncertainty<br/>Quantification"]
+            
+            DOS_Field --> Ensemble_Methods
+            Markov_Analysis --> Ensemble_Methods
+            Ensemble_Methods --> Cross_Validation
+            Cross_Validation --> Uncertainty
+        end
+        
+        subgraph "Tier 4: Distributed Intelligence (MADS)"
+            MADS_Agents["Specialized Agents<br/>• Domain Experts<br/>• Explorers<br/>• Risk Analysts<br/>• Optimizers"]
+            Shadow_Sim["Shadow Simulation<br/>Engine"]
+            Consensus["Consensus<br/>Mechanism"]
+            
+            DOS_Field --> MADS_Agents
+            Markov_Analysis --> Shadow_Sim
+            Ensemble_Methods --> MADS_Agents
+            MADS_Agents --> Consensus
+            Shadow_Sim --> Consensus
+        end
+        
+        subgraph "Tier 5: Energy Optimization Layer"
+            Energy_Landscape["Energy Landscape<br/>E(x,t)"]
+            Energy_Optimizers["Simulated Annealing<br/>Genetic Algorithm<br/>Particle Swarm<br/>Bayesian Optimization"]
+            Energy_Paths["Minimum Energy<br/>Paths"]
+            
+            DOS_Field --> Energy_Landscape
+            Energy_Landscape --> Energy_Optimizers
+            Energy_Optimizers --> Energy_Paths
+            Markov_Transitions --> Energy_Paths
+        end
+    end
+    
+    subgraph "Integration Layer"
+        DADMS["DADMS Integration"]
+        DAS["Digital Assistance<br/>System"]
+        BPMN["BPMN Workflow<br/>Engine"]
+        
+        Consensus --> DADMS
+        Energy_Paths --> DADMS
+        DADMS --> DAS
+        DADMS --> BPMN
+    end
+    
+    subgraph "Output Layer"
+        Recommendations["Decision<br/>Recommendations"]
+        Paths["Optimal<br/>Decision Paths"]
+        Risk_Assessment["Risk<br/>Assessment"]
+        Confidence["Confidence<br/>Metrics"]
+        
+        DAS --> Recommendations
+        DAS --> Paths
+        DAS --> Risk_Assessment
+        DAS --> Confidence
+    end
+    
+    style DOS_Field fill:#e1f5fe
+    style Energy_Landscape fill:#fff3e0
+    style Shadow_Sim fill:#f3e5f5
+    style Consensus fill:#e8f5e8
+    style DADMS fill:#fff9c4
+```
+
 - **Temporal Uncertainty**: Markov chains provide robust stochastic transition modeling
 - **Sequential Decision-Making**: State-dependent evolution captures decision chain dependencies  
 - **Risk Quantification**: Probabilistic outcomes enhance uncertainty analysis
@@ -41,6 +132,52 @@ The Decision Options Space (DOS) represents a revolutionary approach to decision
 The DOS framework introduces several revolutionary concepts:
 
 #### 1. Continuous Field Approach
+
+```mermaid
+graph TB
+    subgraph "DOS Field Navigation Concept"
+        subgraph "3D Decision Landscape"
+            DL_Peak[Quality Peak<br/>High Performance<br/>High Cost]
+            DL_Valley[Sweet Spot Valley<br/>Balanced Solution<br/>Stable Region]
+            DL_Saddle[Trade-off Saddle<br/>Critical Decision Point<br/>Multiple Paths]
+            DL_Plateau[Plateau Region<br/>Similar Options<br/>Low Sensitivity]
+            
+            DL_Peak --> DL_Saddle
+            DL_Saddle --> DL_Valley
+            DL_Valley --> DL_Plateau
+        end
+        
+        subgraph "Navigation Principles"
+            NP_Gradient[Follow Gradients<br/>∇Φ points uphill<br/>Natural improvement direction]
+            NP_Curvature[Check Curvature<br/>∇²Φ indicates stability<br/>Valley = stable, Peak = unstable]
+            NP_Flow[Natural Flow<br/>Like water flowing downhill<br/>Path of least resistance]
+            
+            DL_Valley --> NP_Gradient
+            DL_Peak --> NP_Curvature
+            DL_Saddle --> NP_Flow
+        end
+        
+        subgraph "Decision Process"
+            DP_Start[Current Position<br/>Where am I now?]
+            DP_Sense[Sense Landscape<br/>What's around me?]
+            DP_Navigate[Navigate Smoothly<br/>Which way is better?]
+            DP_Settle[Settle in Stable Region<br/>Good enough for now?]
+            DP_Adapt[Adapt to Changes<br/>How has landscape shifted?]
+            
+            DP_Start --> DP_Sense
+            DP_Sense --> DP_Navigate
+            DP_Navigate --> DP_Settle
+            DP_Settle --> DP_Adapt
+            DP_Adapt --> DP_Sense
+        end
+    end
+    
+    style DL_Valley fill:#c8e6c9
+    style DL_Peak fill:#ffebee
+    style NP_Gradient fill:#e1f5fe
+    style DP_Navigate fill:#fff3e0
+```
+
 ```typescript
 Φ(x,t) = ∑ᵢ φᵢ(t)Ψᵢ(x)  // Option field representation
 ```
@@ -49,6 +186,37 @@ The DOS framework introduces several revolutionary concepts:
 - Enables smooth trade-off analysis
 
 #### 2. Weight-Agnostic Decision Framework
+
+```mermaid
+graph TB
+    subgraph "Traditional Decision Making"
+        T_Start[Decision Point] --> T_Options[Option A<br/>Option B<br/>Option C]
+        T_Options --> T_Weights[Assign Weights<br/>w1=0.3, w2=0.5, w3=0.2]
+        T_Weights --> T_Score[Calculate Score<br/>S = w1*A + w2*B + w3*C]
+        T_Score --> T_Decision[Select Best]
+    end
+    
+    subgraph "DOS Weight-Agnostic Approach"
+        D_Start[Decision Context] --> D_Field[Generate DOS Field<br/>Continuous Landscape]
+        D_Field --> D_Geometry[Analyze Field Geometry<br/>Gradients, Curvature, Topology]
+        D_Geometry --> D_Navigate[Navigate Naturally<br/>Follow Energy Gradients<br/>Find Stable Regions]
+        D_Navigate --> D_Emerge[Importance Emerges<br/>from Landscape Shape]
+        D_Emerge --> D_Adapt[Context Adaptation<br/>Field Geometry Changes<br/>No Weight Reassignment]
+    end
+    
+    subgraph "Results Comparison"
+        T_Decision --> T_Result[Fixed Solution<br/>Based on Preset Weights<br/>May Miss Opportunities]
+        D_Adapt --> D_Result[Adaptive Solution<br/>Natural Importance<br/>Context Responsive]
+    end
+    
+    style T_Start fill:#ffcdd2
+    style T_Weights fill:#ffcdd2
+    style D_Start fill:#c8e6c9
+    style D_Field fill:#e1f5fe
+    style D_Navigate fill:#f3e5f5
+    style D_Result fill:#c8e6c9
+```
+
 ```typescript
 // Traditional weighted approach (biased)
 U = w₁f₁(x) + w₂f₂(x) + ... + wₙfₙ(x)
@@ -150,10 +318,123 @@ P(X₁,...,Xₙ) = ∏ᵢ P(Xᵢ|Parents(Xᵢ))  // Factorization
 
 ## Markov Chain Integration with DOS
 
+### Complete Decision Process Flow
+
+```mermaid
+flowchart TD
+    Start([Requirements Input]) --> SE_Ontology[SE Ontology Mapping<br/>Req to Constraint to Component<br/>to Interface to Process to Function]
+    
+    SE_Ontology --> DOS_Construction{Construct DOS Field<br/>Option Field}
+    
+    DOS_Construction --> Field_Analysis[Field Analysis<br/>Gradients and Hessian<br/>Critical Points<br/>Stability Regions]
+    
+    Field_Analysis --> Markov_Mapping[Field-to-State Mapping<br/>Continuous to Discrete<br/>States map to Regions]
+    
+    Markov_Mapping --> Transition_Calc[Transition Probability<br/>Calculation<br/>From Field Gradients]
+    
+    Transition_Calc --> Markov_Analysis[Markov Analysis<br/>Steady-State<br/>Absorption Probabilities<br/>Expected Times]
+    
+    DOS_Construction --> Ensemble_Methods[Ensemble Methods<br/>Monte Carlo<br/>MCDA Methods<br/>Bayesian Networks<br/>Real Options]
+    
+    Ensemble_Methods --> Cross_Validation[Cross-Validation<br/>and Uncertainty<br/>Quantification]
+    
+    DOS_Construction --> MADS_Deploy[Deploy MADS Agents<br/>Domain Experts<br/>Explorers<br/>Risk Analysts<br/>Optimizers]
+    
+    MADS_Deploy --> Shadow_Sim[Shadow Simulation<br/>Continuous Parallel<br/>Evaluation]
+    
+    DOS_Construction --> Energy_Optimization[Energy Optimization<br/>Simulated Annealing<br/>Genetic Algorithm<br/>Particle Swarm<br/>Bayesian Optimization]
+    
+    Energy_Optimization --> Energy_Paths[Minimum Energy<br/>Decision Paths]
+    
+    Markov_Analysis --> Integration{Integration Engine<br/>Geometric Coupling<br/>Weight-Agnostic}
+    Cross_Validation --> Integration
+    Shadow_Sim --> Integration
+    Energy_Paths --> Integration
+    
+    Integration --> Consensus[Multi-Agent<br/>Consensus Building<br/>Weighted Voting<br/>Byzantine Fault Tolerance<br/>Auction-Based]
+    
+    Consensus --> Validation[Solution Validation<br/>Feasibility Check<br/>Performance Metrics<br/>Risk Assessment]
+    
+    Validation --> Decision{Decision Quality<br/>Threshold Met?}
+    
+    Decision -->|No| Refinement[Refinement Loop<br/>Update Parameters<br/>Adjust Algorithms<br/>Expand Search]
+    Refinement --> Field_Analysis
+    
+    Decision -->|Yes| Final_Output[Final Recommendations<br/>Optimal Solutions<br/>Alternative Paths<br/>Risk Assessment<br/>Confidence Intervals]
+    
+    Final_Output --> DADMS_Integration[DADMS Integration<br/>BPMN Workflow<br/>DAS Guidance<br/>User Interface]
+    
+    DADMS_Integration --> Implementation[Implementation<br/>and Monitoring<br/>Continuous Tracking<br/>Adaptive Updates<br/>Performance Feedback]
+    
+    Implementation --> Learning[System Learning<br/>Update Models<br/>Refine Algorithms<br/>Improve Predictions]
+    
+    Learning -.-> DOS_Construction
+    
+    style Start fill:#c8e6c9
+    style DOS_Construction fill:#e1f5fe
+    style Energy_Optimization fill:#fff3e0
+    style Shadow_Sim fill:#f3e5f5
+    style Integration fill:#fff9c4
+    style Final_Output fill:#c8e6c9
+```
+
 ### Theoretical Foundation
 
 #### Field-to-State Discretization
 The key innovation is mapping continuous DOS fields to discrete Markov states while preserving field properties:
+
+```mermaid
+graph TB
+    subgraph "Continuous DOS Field"
+        CF_Landscape[Continuous Decision Landscape<br/>Φ(x,t)]
+        CF_Gradient[Gradient Field ∇Φ]
+        CF_Critical[Critical Points<br/>Maxima, Minima, Saddles]
+        CF_Stable[Stable Regions<br/>Valleys]
+        
+        CF_Landscape --> CF_Gradient
+        CF_Landscape --> CF_Critical
+        CF_Gradient --> CF_Stable
+    end
+    
+    subgraph "Discretization Process"
+        DP_Identify[Identify Stable<br/>Regions]
+        DP_Cluster[Cluster Similar<br/>Field Properties]
+        DP_Create[Create States<br/>S_i ↔ Regions Ω_i]
+        DP_Properties[Preserve Field<br/>Properties in States]
+        
+        CF_Stable --> DP_Identify
+        DP_Identify --> DP_Cluster
+        DP_Cluster --> DP_Create
+        DP_Create --> DP_Properties
+    end
+    
+    subgraph "Discrete Markov States"
+        MS_States[Markov States S_i]
+        MS_Transitions[Transition Matrix P_{ij}]
+        MS_Properties[State Properties<br/>• Field Value<br/>• Stability<br/>• Gradient<br/>• Curvature]
+        
+        DP_Properties --> MS_States
+        MS_States --> MS_Properties
+        MS_States --> MS_Transitions
+    end
+    
+    subgraph "Transition Computation"
+        TC_Gradient[Gradient-Based<br/>Transitions]
+        TC_Distance[Distance Decay<br/>Factor]
+        TC_Stability[Stability<br/>Modifier]
+        TC_Combine[Combine Using<br/>DOS Principles]
+        
+        CF_Gradient --> TC_Gradient
+        TC_Gradient --> TC_Combine
+        TC_Distance --> TC_Combine
+        TC_Stability --> TC_Combine
+        TC_Combine --> MS_Transitions
+    end
+    
+    style CF_Landscape fill:#e1f5fe
+    style MS_States fill:#f3e5f5
+    style TC_Combine fill:#fff9c4
+```
 
 ```typescript
 interface DOSMarkovState {
@@ -622,6 +903,96 @@ interface WingDesignResults {
 
 ## Ensemble Methods for Comprehensive Analysis
 
+### Ensemble Integration Architecture
+
+```mermaid
+graph TB
+    subgraph "Input Layer"
+        IL_Problem[Decision Problem<br/>Requirements & Constraints]
+        IL_Context[Decision Context<br/>Environment & Objectives]
+        IL_Data[Historical Data<br/>Past Decisions & Outcomes]
+        
+        IL_Problem --> IL_Context
+        IL_Context --> IL_Data
+    end
+    
+    subgraph "Method Layer"
+        subgraph "Primary Methods"
+            PM_DOS[DOS-Markov Hybrid<br/>• Continuous field analysis<br/>• Stochastic transitions<br/>• Weight-agnostic optimization]
+            PM_Energy[Energy Optimization<br/>• Simulated annealing<br/>• Genetic algorithms<br/>• Geometric coupling]
+            PM_MADS[Multi-Agent System<br/>• Shadow simulation<br/>• Distributed intelligence<br/>• Consensus building]
+        end
+        
+        subgraph "Validation Methods"
+            VM_MC[Monte Carlo<br/>• Uncertainty propagation<br/>• Scenario generation<br/>• Statistical validation]
+            VM_MCDA[MCDA Methods<br/>• AHP, TOPSIS, PROMETHEE<br/>• Structured comparison<br/>• Criteria weighting]
+            VM_Bayes[Bayesian Networks<br/>• Causal modeling<br/>• Probabilistic inference<br/>• Uncertainty reasoning]
+            VM_RealOpt[Real Options<br/>• Flexibility valuation<br/>• Strategic timing<br/>• Investment analysis]
+        end
+    end
+    
+    subgraph "Cross-Validation Layer"
+        CV_LeaveOut[Leave-One-Out<br/>Cross Validation]
+        CV_Bootstrap[Bootstrap<br/>Resampling]
+        CV_KFold[K-Fold<br/>Validation]
+        CV_TimeSeeries[Time Series<br/>Cross Validation]
+        
+        CV_LeaveOut --> CV_Bootstrap
+        CV_Bootstrap --> CV_KFold
+        CV_KFold --> CV_TimeSeeries
+    end
+    
+    subgraph "Aggregation Layer"
+        AL_Weighted[Weighted Combination<br/>Performance-based weights]
+        AL_Voting[Voting-Based<br/>Democratic aggregation]
+        AL_Consensus[Consensus-Based<br/>Agreement seeking]
+        AL_Adaptive[Adaptive Weighting<br/>Context-sensitive]
+        
+        AL_Weighted --> AL_Adaptive
+        AL_Voting --> AL_Adaptive
+        AL_Consensus --> AL_Adaptive
+    end
+    
+    subgraph "Output Layer"
+        OL_Recommendation[Primary Recommendation<br/>Highest confidence solution]
+        OL_Alternatives[Alternative Solutions<br/>Backup options with trade-offs]
+        OL_Uncertainty[Uncertainty Bounds<br/>Confidence intervals]
+        OL_Risk[Risk Assessment<br/>Failure modes and mitigation]
+    end
+    
+    %% Connections
+    IL_Data --> PM_DOS
+    IL_Data --> PM_Energy
+    IL_Data --> PM_MADS
+    IL_Data --> VM_MC
+    IL_Data --> VM_MCDA
+    IL_Data --> VM_Bayes
+    IL_Data --> VM_RealOpt
+    
+    PM_DOS --> CV_LeaveOut
+    PM_Energy --> CV_Bootstrap
+    PM_MADS --> CV_KFold
+    VM_MC --> CV_TimeSeeries
+    VM_MCDA --> CV_LeaveOut
+    VM_Bayes --> CV_Bootstrap
+    VM_RealOpt --> CV_KFold
+    
+    CV_TimeSeeries --> AL_Weighted
+    CV_TimeSeeries --> AL_Voting
+    CV_TimeSeeries --> AL_Consensus
+    
+    AL_Adaptive --> OL_Recommendation
+    AL_Adaptive --> OL_Alternatives
+    AL_Adaptive --> OL_Uncertainty
+    AL_Adaptive --> OL_Risk
+    
+    style PM_DOS fill:#e1f5fe
+    style PM_Energy fill:#fff3e0
+    style PM_MADS fill:#f3e5f5
+    style CV_TimeSeeries fill:#e8f5e8
+    style OL_Recommendation fill:#c8e6c9
+```
+
 ### Rationale for Ensemble Approach
 
 Single-method approaches, even advanced ones like DOS-Markov hybrid, have limitations:
@@ -1046,6 +1417,58 @@ interface TechnicalArchitecture {
 
 ### Benefits of Hybrid Approach
 
+#### System Benefits Comparison
+
+```mermaid
+graph TB
+    subgraph "Traditional Decision Systems"
+        TS_Discrete[Discrete Options<br/>Limited Choices]
+        TS_Static[Static Weights<br/>Fixed Importance]
+        TS_Single[Single Method<br/>Method Bias]
+        TS_Manual[Manual Process<br/>Human Intensive]
+        
+        TS_Discrete --> TS_Result[Suboptimal Results<br/>Limited Exploration<br/>Missed Opportunities]
+        TS_Static --> TS_Result
+        TS_Single --> TS_Result
+        TS_Manual --> TS_Result
+    end
+    
+    subgraph "DOS-Markov-Ensemble-MADS System"
+        DS_Continuous[Continuous Field<br/>Infinite Possibilities]
+        DS_Geometric[Geometric Coupling<br/>Natural Importance]
+        DS_Ensemble[Multiple Methods<br/>Cross-Validation]
+        DS_Automated[Automated Analysis<br/>AI-Enhanced]
+        DS_Shadow[Shadow Simulation<br/>Continuous Optimization]
+        DS_Energy[Energy Optimization<br/>Efficient Paths]
+        
+        DS_Continuous --> DS_Benefits[Superior Results<br/>Comprehensive Analysis<br/>Optimal Solutions]
+        DS_Geometric --> DS_Benefits
+        DS_Ensemble --> DS_Benefits
+        DS_Automated --> DS_Benefits
+        DS_Shadow --> DS_Benefits
+        DS_Energy --> DS_Benefits
+    end
+    
+    subgraph "Quantified Benefits"
+        QB_Quality[Decision Quality<br/>• 40% better optimization<br/>• 90% confidence levels<br/>• Robust uncertainty handling]
+        QB_Speed[Response Speed<br/>• 24/7 monitoring<br/>• Real-time adaptation<br/>• Proactive identification]
+        QB_Cost[Cost Efficiency<br/>• 25% resource savings<br/>• Energy ROI 4-5x<br/>• Automated optimization]
+        QB_Risk[Risk Mitigation<br/>• Early warning system<br/>• Multiple validation<br/>• Fault tolerance]
+    end
+    
+    DS_Benefits --> QB_Quality
+    DS_Benefits --> QB_Speed
+    DS_Benefits --> QB_Cost
+    DS_Benefits --> QB_Risk
+    
+    style TS_Result fill:#ffcdd2
+    style DS_Benefits fill:#c8e6c9
+    style QB_Quality fill:#e1f5fe
+    style QB_Speed fill:#f3e5f5
+    style QB_Cost fill:#fff3e0
+    style QB_Risk fill:#e8f5e8
+```
+
 #### 1. Enhanced Decision Quality
 - **Continuous optimization**: DOS provides smooth optimization landscape
 - **Uncertainty handling**: Markov chains model probabilistic outcomes
@@ -1293,6 +1716,56 @@ gantt
     section Phase 4: Deployment
     Testing and Validation           :p4a, after p3c, 30d
     Production Deployment            :p4b, after p4a, 30d
+```
+
+### Complete System Integration Architecture
+
+```mermaid
+C4Context
+    title Complete DOS-Markov-Ensemble-MADS-Energy System Architecture
+    
+    Person(user, "Decision Maker", "Systems engineer, project manager, analyst")
+    Person(stakeholder, "Stakeholders", "Management, customers, regulators")
+    
+    System_Boundary(dosSystem, "DOS Decision Intelligence Platform") {
+        Container(dosCore, "DOS Core Engine", "TypeScript/Node.js", "Continuous field analysis, gradient computation, stability assessment")
+        Container(markovEngine, "Markov Analysis Engine", "Python/NumPy", "State discretization, transition probabilities, steady-state analysis")
+        Container(ensembleFramework, "Ensemble Framework", "Python/scikit-learn", "Monte Carlo, MCDA, Bayesian networks, cross-validation")
+        Container(madsEngine, "MADS Engine", "Distributed System", "Multi-agent coordination, shadow simulation, consensus building")
+        Container(energyOptimizer, "Energy Optimizer", "C++/CUDA", "Simulated annealing, genetic algorithms, geometric coupling")
+        
+        Container(integrationLayer, "Integration Layer", "TypeScript", "Geometric coupling, weight-agnostic aggregation")
+        Container(dadmsConnector, "DADMS Connector", "REST API", "Workflow integration, ambient intelligence interface")
+        
+        ContainerDb(dosDatabase, "DOS Database", "PostgreSQL", "Decision history, field states, model parameters")
+        ContainerDb(cacheLayer, "Cache Layer", "Redis", "Field computations, optimization results, agent states")
+    }
+    
+    System_Ext(dadms, "DADMS Platform", "Digital assistance and decision management system")
+    System_Ext(bpmn, "BPMN Engine", "Business process management and workflow automation")
+    System_Ext(externalData, "External Data Sources", "Market data, sensor data, historical records")
+    
+    Rel(user, dosCore, "Initiates decision analysis")
+    Rel(dosCore, markovEngine, "Field discretization")
+    Rel(dosCore, ensembleFramework, "Validation request")
+    Rel(dosCore, madsEngine, "Agent deployment")
+    Rel(dosCore, energyOptimizer, "Energy landscape")
+    
+    Rel(markovEngine, integrationLayer, "Transition probabilities")
+    Rel(ensembleFramework, integrationLayer, "Validation results")
+    Rel(madsEngine, integrationLayer, "Agent consensus")
+    Rel(energyOptimizer, integrationLayer, "Optimal paths")
+    
+    Rel(integrationLayer, dadmsConnector, "Aggregated recommendations")
+    Rel(dadmsConnector, dadms, "Decision artifacts")
+    Rel(dadms, bpmn, "Workflow integration")
+    
+    Rel(dosCore, dosDatabase, "Stores/retrieves field data")
+    Rel(energyOptimizer, cacheLayer, "Optimization cache")
+    Rel(externalData, dosCore, "External inputs")
+    
+    Rel(integrationLayer, user, "Decision recommendations")
+    Rel(integrationLayer, stakeholder, "Impact analysis")
 ```
 
 ## Conclusion
@@ -1759,7 +2232,86 @@ class TechnologyMaturityAnalysis {
 
 ### A.4 DOS-Based Decision Evaluation Framework
 
-#### A.4.1 Decision Space Definition
+#### A.4.1 Progressive Decision Structure Visualization
+
+```mermaid
+graph TB
+    subgraph "Level 1: Strategic Architecture Decision"
+        L1_Single[Single Large Platform<br/>High Capability<br/>High Risk]
+        L1_Distributed[Distributed Small Platforms<br/>Redundancy<br/>Scalability]
+        L1_Hybrid[Hybrid Approach<br/>Mixed Fleet<br/>Flexibility]
+        L1_SoS[System-of-Systems<br/>Integration<br/>Complexity]
+        
+        L1_DOS[Strategic DOS Field] --> L1_Single
+        L1_DOS --> L1_Distributed
+        L1_DOS --> L1_Hybrid
+        L1_DOS --> L1_SoS
+    end
+    
+    subgraph "Level 2: Platform Selection Decision"
+        L2_COTS[Commercial Off-the-Shelf<br/>Fast Deployment<br/>Limited Customization]
+        L2_Modified[Modified Existing<br/>Balanced Approach<br/>Moderate Timeline]
+        L2_Custom[Custom Development<br/>Perfect Fit<br/>Long Timeline]
+        
+        L2_DOS[Platform DOS Field] --> L2_COTS
+        L2_DOS --> L2_Modified
+        L2_DOS --> L2_Custom
+    end
+    
+    subgraph "Level 3: Capability Gap Analysis"
+        L3_Accept[Accept Limitations<br/>Quick Deployment<br/>Partial Capability]
+        L3_Incremental[Incremental Development<br/>Moderate Investment<br/>Gradual Improvement]
+        L3_Breakthrough[Breakthrough Research<br/>High Investment<br/>Revolutionary Capability]
+        
+        L3_DOS[Capability DOS Field] --> L3_Accept
+        L3_DOS --> L3_Incremental
+        L3_DOS --> L3_Breakthrough
+    end
+    
+    subgraph "Level 4: Implementation Strategy"
+        L4_Commercial[Commercial Procurement<br/>Standard Process<br/>Established Supply]
+        L4_Partnership[Partnership Development<br/>Shared Investment<br/>Joint Development]
+        L4_Internal[Internal Development<br/>Full Control<br/>Resource Intensive]
+        
+        L4_DOS[Implementation DOS Field] --> L4_Commercial
+        L4_DOS --> L4_Partnership
+        L4_DOS --> L4_Internal
+    end
+    
+    %% Dependencies between levels
+    L1_Distributed -.-> L2_DOS
+    L2_Modified -.-> L3_DOS
+    L3_Incremental -.-> L4_DOS
+    
+    %% Gap Analysis
+    subgraph "Capability Gaps"
+        Gap_Endurance[Endurance Gap<br/>24h required vs 2.5h available<br/>Gap: 21.5 hours]
+        Gap_Payload[Payload Gap<br/>10kg required vs 2.7kg available<br/>Gap: 7.3 kg]
+        Gap_Weather[Weather Gap<br/>Severe vs Moderate capability<br/>Gap: Qualitative High]
+        Gap_Autonomy[Autonomy Gap<br/>Level 4 vs Level 2<br/>Gap: 2 levels]
+    end
+    
+    %% Gap closure strategies
+    subgraph "Gap Closure DOS Fields"
+        GC_Endurance[Endurance Closure<br/>• Battery tech: $2M, 36mo, 0.4 risk<br/>• Platform rotation: $500K, 12mo, 0.1 risk<br/>• Refueling stations: $1.5M, 18mo, 0.2 risk]
+        GC_Payload[Payload Closure<br/>• Larger platform: $5M, 48mo, 0.3 risk<br/>• Distributed approach: $800K, 18mo, 0.15 risk]
+    end
+    
+    Gap_Endurance --> GC_Endurance
+    Gap_Payload --> GC_Payload
+    
+    style L1_DOS fill:#e1f5fe
+    style L2_DOS fill:#e1f5fe
+    style L3_DOS fill:#e1f5fe
+    style L4_DOS fill:#e1f5fe
+    style L1_Distributed fill:#c8e6c9
+    style L2_Modified fill:#c8e6c9
+    style L3_Incremental fill:#c8e6c9
+    style Gap_Endurance fill:#fff3e0
+    style Gap_Payload fill:#fff3e0
+```
+
+#### A.4.2 Decision Space Definition
 
 The disaster relief UAS decision space is multi-dimensional, encompassing platform selection, system architecture, and capability development strategies.
 
@@ -2436,11 +2988,132 @@ The disaster relief UAS example shows that the framework scales effectively to r
 
 This appendix explores the integration of least energy analysis principles with the DOS-Markov-Ensemble framework to identify optimal pathways through complex decision landscapes. By treating decision-making as energy minimization problems, we can leverage advanced computational methods to find efficient routes through the decision option space.
 
+**Critical Note: Weight-Agnostic Energy Optimization**
+
+Unlike traditional optimization approaches that rely on predetermined weights to balance competing objectives, the DOS-based energy optimization framework maintains the fundamental weight-agnostic philosophy. Energy components are combined through geometric coupling and field topology rather than arbitrary weight assignments, ensuring that importance emerges naturally from the decision landscape geometry.
+
 ### B.1 Theoretical Foundation of Energy-Based Decision Analysis
 
 #### B.1.1 Energy Concepts in Decision Spaces
 
 In physics, systems naturally evolve toward states of minimum energy. Similarly, in decision-making, we can conceptualize the "energy" associated with different choices and seek paths that minimize total energy expenditure.
+
+**Weight-Agnostic Energy Combination:**
+
+Unlike traditional approaches that use weighted sums (e.g., E_total = w₁E₁ + w₂E₂ + w₃E₃), the DOS framework employs geometric coupling to preserve natural relationships:
+
+```typescript
+// Traditional (biased) approach - AVOIDED in DOS
+E_total = w₁ × mission_energy + w₂ × development_energy + w₃ × operational_energy
+
+// DOS geometric approach - importance emerges from landscape
+E_total = geometricMean(mission_energy, development_energy, operational_energy)
+        = ⁿ√(E₁ × E₂ × ... × Eₙ)
+```
+
+This approach ensures that:
+- **No arbitrary biases**: Importance is not predetermined by human judgment
+- **Natural scaling**: Energy components contribute proportionally to their magnitudes
+- **Context sensitivity**: Field geometry adapts to context without changing weights
+- **Physical consistency**: Maintains dimensional analysis and physical interpretability
+
+**Connection to DOS Theory:**
+
+The geometric coupling approach directly follows from DOS field equations and trade-off tensor formulation:
+
+```typescript
+// Energy field from DOS trade-off tensor
+E(x,t) = F[T^{ijk}(x,t), κ(x)]
+
+where T^{ijk}(x,t) = ∂²Φⁱ/∂xʲ∂xᵏ + Γⁱⱼₖ(x)Φⁱ
+
+// Geometric coupling emerges from field geometry, not imposed weights
+E_total = exp(∫∫ log(E_i) · g_{ij} dx^i dx^j)
+
+where g_{ij} is the natural metric tensor of the decision manifold
+```
+
+This formulation ensures that energy optimization respects the fundamental DOS principle that importance emerges from the geometry of the decision space itself.
+
+#### B.1.3 Weight-Agnostic vs Traditional Approaches
+
+| Traditional Weight-Based | DOS Weight-Agnostic |
+|--------------------------|---------------------|
+| E = w₁E₁ + w₂E₂ + w₃E₃ | E = ⁿ√(E₁ × E₂ × ... × Eₙ) |
+| Predetermined importance | Emergent importance |
+| Subjective bias injection | Objective geometric relationships |
+| Fixed across contexts | Context-adaptive through field geometry |
+| Requires expert weight assignment | Self-organizing through landscape topology |
+| Linear combination | Geometric coupling preserves natural scaling |
+
+**Example Comparison:**
+
+```typescript
+// Traditional approach (BIASED)
+mission_energy = 0.6 * flight_energy + 0.3 * payload_energy + 0.1 * comm_energy
+// Who decided 60%/30%/10%? Why not 55%/35%/10%?
+
+// DOS approach (UNBIASED) 
+mission_energy = geometricMean(flight_energy, payload_energy, comm_energy)
+// Importance emerges naturally from energy magnitudes and field curvature
+```
+
+In the DOS approach, if flight_energy dominates, it naturally receives more influence without arbitrary weight assignment. If context changes (e.g., communication becomes critical in remote areas), the field geometry adapts naturally through the metric tensor g_{ij}, not through manual reweighting.
+
+#### Visual Comparison: Weight-Based vs Weight-Agnostic Energy Optimization
+
+```mermaid
+graph TB
+    subgraph "Traditional Weight-Based Optimization"
+        TWB_Input[Input: Energy Components<br/>E1=100, E2=50, E3=200]
+        TWB_Weights[Assign Weights<br/>w1=0.4, w2=0.3, w3=0.3]
+        TWB_Calc[Calculate: E_total<br/>= 0.4×100 + 0.3×50 + 0.3×200<br/>= 40 + 15 + 60 = 115]
+        TWB_Problem[Problems:<br/>• Who chose these weights?<br/>• Why 40%/30%/30%?<br/>• How to adapt to context?]
+        
+        TWB_Input --> TWB_Weights
+        TWB_Weights --> TWB_Calc
+        TWB_Calc --> TWB_Problem
+    end
+    
+    subgraph "DOS Weight-Agnostic Optimization"
+        DWA_Input[Input: Energy Components<br/>E1=100, E2=50, E3=200]
+        DWA_Geometric[Geometric Coupling<br/>E_total = ³√(E1 × E2 × E3)<br/>= ³√(100 × 50 × 200)<br/>= ³√(1,000,000) = 100]
+        DWA_Field[Field Geometry Analysis<br/>• Natural relationships<br/>• Context adaptation<br/>• Emergent importance]
+        DWA_Adapt[Adaptive Response<br/>• High E3 → steeper gradients<br/>• Context shift → geometry change<br/>• No manual reweighting]
+        
+        DWA_Input --> DWA_Geometric
+        DWA_Geometric --> DWA_Field
+        DWA_Field --> DWA_Adapt
+    end
+    
+    subgraph "Context Change Example"
+        CC_Before[Before: Normal Operations<br/>All components equal importance<br/>Field geometry balanced]
+        CC_Change[Context: Remote Disaster Zone<br/>Communication becomes critical<br/>E3 importance increases]
+        CC_Traditional[Traditional Response<br/>Manually increase w3<br/>Subjective decision<br/>Potential bias]
+        CC_DOS[DOS Response<br/>Field curvature adapts<br/>Natural emergence<br/>Objective adaptation]
+        
+        CC_Before --> CC_Change
+        CC_Change --> CC_Traditional
+        CC_Change --> CC_DOS
+    end
+    
+    subgraph "Results Comparison"
+        RC_Traditional[Traditional Result<br/>• Arbitrary decisions<br/>• Potential suboptimization<br/>• Human bias injection]
+        RC_DOS[DOS Result<br/>• Natural optimization<br/>• Context-adaptive<br/>• Objective emergence]
+        
+        TWB_Problem --> RC_Traditional
+        DWA_Adapt --> RC_DOS
+        CC_Traditional --> RC_Traditional
+        CC_DOS --> RC_DOS
+    end
+    
+    style TWB_Weights fill:#ffcdd2
+    style TWB_Problem fill:#ffcdd2
+    style DWA_Geometric fill:#e1f5fe
+    style DWA_Field fill:#e1f5fe
+    style RC_Traditional fill:#ffcdd2
+    style RC_DOS fill:#c8e6c9
+```
 
 **Decision Energy Components:**
 
@@ -2485,12 +3158,35 @@ interface EnergyLandscape {
 
 class DOSEnergyLandscape {
   computePotentialEnergy(position: DOSPoint): number {
-    // Combine various energy components
+    // Combine various energy components using DOS geometric coupling
     const resourceEnergy = this.computeResourceEnergy(position);
     const riskEnergy = this.computeRiskEnergy(position);
     const qualityEnergy = this.computeQualityEnergy(position);
     
-    return resourceEnergy + riskEnergy + qualityEnergy;
+    // Weight-agnostic combination preserving natural relationships
+    return this.geometricCoupling([resourceEnergy, riskEnergy, qualityEnergy]);
+  }
+  
+  // DOS-compatible geometric coupling
+  private geometricCoupling(energyComponents: number[]): number {
+    // Use geometric mean to preserve natural energy relationships
+    if (energyComponents.some(c => c <= 0)) {
+      // Transform negative/zero values to positive domain
+      const minValue = Math.min(...energyComponents);
+      const offset = minValue <= 0 ? Math.abs(minValue) + 1 : 0;
+      const positiveComponents = energyComponents.map(c => c + offset);
+      
+      const geometricMean = Math.pow(
+        positiveComponents.reduce((prod, component) => prod * component, 1),
+        1 / positiveComponents.length
+      );
+      
+      return geometricMean - offset;
+    }
+    
+    // Standard geometric mean for positive components
+    const product = energyComponents.reduce((prod, component) => prod * component, 1);
+    return Math.pow(product, 1 / energyComponents.length);
   }
   
   computeEnergyGradient(position: DOSPoint): DOSVector {
@@ -2532,7 +3228,72 @@ class DOSEnergyLandscape {
 
 ### B.2 Computational Methods for Least Energy Path Finding
 
-#### B.2.1 Simulated Annealing for Decision Optimization
+#### B.2.1 Energy Optimization Algorithm Comparison
+
+```mermaid
+graph TB
+    subgraph "Energy Landscape"
+        EL_Surface[3D Energy Surface<br/>E(x,y,z,t)]
+        EL_Minima[Local Minima<br/>Stable Regions]
+        EL_Global[Global Minimum<br/>Optimal Solution]
+        EL_Barriers[Energy Barriers<br/>Transition Obstacles]
+        
+        EL_Surface --> EL_Minima
+        EL_Surface --> EL_Global
+        EL_Surface --> EL_Barriers
+    end
+    
+    subgraph "Optimization Algorithms"
+        subgraph "Population-Based"
+            GA[Genetic Algorithm<br/>• Population evolution<br/>• Crossover & mutation<br/>• Natural selection]
+            PSO[Particle Swarm<br/>• Swarm intelligence<br/>• Velocity updates<br/>• Social learning]
+            DE[Differential Evolution<br/>• Vector differences<br/>• Self-adaptive<br/>• Fast convergence]
+        end
+        
+        subgraph "Single-Point"
+            SA[Simulated Annealing<br/>• Temperature cooling<br/>• Escape local minima<br/>• Probabilistic acceptance]
+            BO[Bayesian Optimization<br/>• Gaussian process<br/>• Acquisition function<br/>• Expensive evaluations]
+            CMA[CMA-ES<br/>• Covariance adaptation<br/>• Distribution evolution<br/>• High dimensions]
+        end
+        
+        subgraph "Bio-Inspired"
+            ACO[Ant Colony<br/>• Pheromone trails<br/>• Path construction<br/>• Collective intelligence]
+            HS[Harmony Search<br/>• Musical inspiration<br/>• Memory consideration<br/>• Pitch adjustment]
+        end
+        
+        subgraph "Advanced"
+            RL[Reinforcement Learning<br/>• Environmental feedback<br/>• Policy optimization<br/>• Dynamic adaptation]
+            VAR[Variational Methods<br/>• Calculus of variations<br/>• Euler-Lagrange<br/>• Analytical solutions]
+        end
+    end
+    
+    subgraph "Algorithm Selection Strategy"
+        AS_Expensive{Expensive<br/>Evaluations?}
+        AS_Multimodal{Highly<br/>Multimodal?}
+        AS_Continuous{Continuous<br/>Variables?}
+        AS_Path{Path Planning<br/>Focus?}
+        AS_Ensemble[Default: Ensemble<br/>Multiple Algorithms]
+        
+        AS_Expensive -->|Yes| BO
+        AS_Multimodal -->|Yes| SA
+        AS_Continuous -->|Yes| CMA
+        AS_Path -->|Yes| ACO
+        AS_Expensive -->|No| AS_Multimodal
+        AS_Multimodal -->|No| AS_Continuous
+        AS_Continuous -->|No| AS_Path
+        AS_Path -->|No| AS_Ensemble
+    end
+    
+    EL_Surface --> AS_Expensive
+    
+    style EL_Global fill:#c8e6c9
+    style SA fill:#ffcdd2
+    style BO fill:#e1f5fe
+    style CMA fill:#fff3e0
+    style AS_Ensemble fill:#f3e5f5
+```
+
+#### B.2.2 Simulated Annealing for Decision Optimization
 
 Simulated Annealing (SA) mimics the physical annealing process to find global energy minima in complex landscapes.
 
@@ -3133,25 +3894,51 @@ class MultiObjectiveEnergyOptimization {
   
   findBestCompromise(
     paretoFrontier: ParetoFrontier,
-    weights: number[]
+    context: DecisionContext
   ): DOSPoint {
-    // Weighted sum approach for compromise solution
+    // Weight-agnostic compromise solution using geometric distance
     let bestSolution = paretoFrontier.solutions[0];
-    let bestScore = -Infinity;
+    let bestGeometricScore = -Infinity;
+    
+    // Find ideal point (best in each objective)
+    const idealPoint = this.computeIdealPoint(paretoFrontier.objectives);
     
     for (let i = 0; i < paretoFrontier.solutions.length; i++) {
       const objectives = paretoFrontier.objectives[i];
-      const weightedScore = objectives.reduce(
-        (sum, obj, idx) => sum + weights[idx] * obj, 0
-      );
       
-      if (weightedScore > bestScore) {
-        bestScore = weightedScore;
+      // Use geometric distance to ideal point (weight-agnostic)
+      const geometricDistance = this.computeGeometricDistance(objectives, idealPoint);
+      const geometricScore = 1 / geometricDistance; // Higher is better
+      
+      // Context adaptation through field geometry, not weights
+      const contextAdaptedScore = this.adaptToContext(geometricScore, context);
+      
+      if (contextAdaptedScore > bestGeometricScore) {
+        bestGeometricScore = contextAdaptedScore;
         bestSolution = paretoFrontier.solutions[i];
       }
     }
     
     return bestSolution;
+  }
+  
+  // Geometric distance calculation (weight-agnostic)
+  private computeGeometricDistance(objectives: number[], idealPoint: number[]): number {
+    const normalizedDistances = objectives.map((obj, idx) => 
+      Math.abs(obj - idealPoint[idx]) / idealPoint[idx]
+    );
+    
+    // Geometric mean of normalized distances
+    const product = normalizedDistances.reduce((prod, dist) => prod * (1 + dist), 1);
+    return Math.pow(product, 1 / normalizedDistances.length) - 1;
+  }
+  
+  // Context adaptation through field geometry
+  private adaptToContext(score: number, context: DecisionContext): number {
+    // Use DOS field curvature to adapt, not weights
+    const fieldCurvature = this.computeFieldCurvature(context);
+    const contextualModifier = Math.exp(-fieldCurvature.trace() / fieldCurvature.dimensions);
+    return score * contextualModifier;
   }
 }
 ```
@@ -3174,9 +3961,9 @@ class UASEnergyOptimization {
           const payloadEnergy = this.computePayloadEnergy(solution);
           const communicationEnergy = this.computeCommEnergy(solution);
           
-          return flightEnergy + payloadEnergy + communicationEnergy;
-        },
-        weight: 0.4
+          // Geometric coupling - no arbitrary weights
+          return this.geometricCoupling([flightEnergy, payloadEnergy, communicationEnergy]);
+        }
       },
       
       {
@@ -3187,9 +3974,9 @@ class UASEnergyOptimization {
           const testingEnergy = this.computeTestingEnergy(solution);
           const manufacturingEnergy = this.computeManufacturingEnergy(solution);
           
-          return designEnergy + testingEnergy + manufacturingEnergy;
-        },
-        weight: 0.3
+          // Geometric coupling preserves natural relationships
+          return this.geometricCoupling([designEnergy, testingEnergy, manufacturingEnergy]);
+        }
       },
       
       {
@@ -3200,9 +3987,9 @@ class UASEnergyOptimization {
           const trainingEnergy = this.computeTrainingEnergy(solution);
           const deploymentEnergy = this.computeDeploymentEnergy(solution);
           
-          return maintenanceEnergy + trainingEnergy + deploymentEnergy;
-        },
-        weight: 0.3
+          // Natural geometric combination without weights
+          return this.geometricCoupling([maintenanceEnergy, trainingEnergy, deploymentEnergy]);
+        }
       }
     ];
   }
@@ -3215,10 +4002,11 @@ class UASEnergyOptimization {
     const moea = new MultiObjectiveEnergyOptimization();
     const paretoFrontier = moea.optimizeParetoFrontier(objectives, bounds);
     
-    // Single-objective optimization using simulated annealing
+    // Single-objective optimization using geometric coupling
     const totalEnergyObjective = (solution: DOSPoint) => {
-      return objectives.reduce((total, obj) => 
-        total + obj.weight * obj.evaluate(solution), 0);
+      const energyComponents = objectives.map(obj => obj.evaluate(solution));
+      // Use geometric mean instead of weighted sum - weight-agnostic approach
+      return this.geometricCoupling(energyComponents);
     };
     
     const sa = new SimulatedAnnealingDOS(1000, 0.95, 0.001);
@@ -3237,6 +4025,21 @@ class UASEnergyOptimization {
       energy_analysis: this.analyzeEnergyComponents(paretoFrontier),
       recommendations: this.generateRecommendations(paretoFrontier, saResult, pathResult)
     };
+  }
+  
+  // Weight-agnostic geometric coupling method
+  private geometricCoupling(energyComponents: number[]): number {
+    // Use geometric mean to preserve natural relationships without arbitrary weights
+    const product = energyComponents.reduce((prod, component) => prod * component, 1);
+    return Math.pow(product, 1 / energyComponents.length);
+  }
+  
+  // Alternative: Information-theoretic coupling
+  private informationTheoreticCoupling(energyComponents: number[]): number {
+    // Use Fisher Information Matrix approach from DOS theory
+    const normalized = this.normalizeComponents(energyComponents);
+    const entropy = -normalized.reduce((sum, p) => sum + p * Math.log(p), 0);
+    return Math.exp(entropy); // Natural importance without weights
   }
   
   private computeFlightEnergy(solution: DOSPoint): number {
@@ -3985,10 +4788,15 @@ class ComprehensiveUASEnergyAnalysis {
     landscape: UASEnergyLandscape
   ): EnsembleOptimizationResults {
     const totalEnergyFunction = (params: DOSPoint) => {
-      return landscape.mission_energy.flight_energy(params) +
-             landscape.development_energy.design_energy(params) +
-             landscape.operational_energy.lifecycle_energy(params) +
-             landscape.risk_energy.uncertainty_energy(params);
+      const energyComponents = [
+        landscape.mission_energy.flight_energy(params),
+        landscape.development_energy.design_energy(params),
+        landscape.operational_energy.lifecycle_energy(params),
+        landscape.risk_energy.uncertainty_energy(params)
+      ];
+      
+      // Geometric coupling - weight-agnostic combination
+      return this.geometricCoupling(energyComponents);
     };
     
     // Run ensemble of optimization algorithms
@@ -4092,6 +4900,24 @@ class ComprehensiveUASEnergyAnalysis {
         risk_mitigation: results.implementation_strategy.risk_mitigation
       }
     };
+  }
+  
+  // DOS-compatible geometric coupling (weight-agnostic)
+  private geometricCoupling(energyComponents: number[]): number {
+    // Geometric mean preserves natural relationships without imposed weights
+    if (energyComponents.some(c => c <= 0)) {
+      // Handle zero/negative components using offset
+      const offset = Math.abs(Math.min(...energyComponents)) + 1;
+      const offsetComponents = energyComponents.map(c => c + offset);
+      const result = Math.pow(
+        offsetComponents.reduce((prod, component) => prod * component, 1),
+        1 / offsetComponents.length
+      );
+      return result - offset;
+    }
+    
+    const product = energyComponents.reduce((prod, component) => prod * component, 1);
+    return Math.pow(product, 1 / energyComponents.length);
   }
 }
 ```
@@ -4531,10 +5357,11 @@ The integration of least energy analysis into the DOS-Markov-Ensemble framework 
 
 **Key Innovations:**
 
-- **Energy Landscape Mapping**: Transform decision spaces into navigable energy landscapes
-- **Multi-Algorithm Ensemble**: Leverage strengths of different optimization approaches
-- **Adaptive Optimization**: Dynamic algorithm selection and parameter tuning
-- **Continuous Monitoring**: Real-time energy efficiency tracking and optimization
+- **Weight-Agnostic Energy Landscape Mapping**: Transform decision spaces into navigable energy landscapes without imposed weights
+- **Geometric Energy Coupling**: Natural combination of energy components through field geometry
+- **Multi-Algorithm Ensemble**: Leverage strengths of different optimization approaches while preserving DOS principles
+- **Adaptive Optimization**: Dynamic algorithm selection and parameter tuning based on landscape topology
+- **Continuous Monitoring**: Real-time energy efficiency tracking and optimization through natural field evolution
 
 The UAS disaster relief example demonstrates that energy-based optimization can lead to:
 - **40% reduction** in total system energy requirements
